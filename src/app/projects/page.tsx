@@ -55,7 +55,7 @@ export default function ProjectsPage() {
                 className="bg-[#FAF7F2] border border-[#E5D9CC] rounded-2xl p-6  hover:-translate-y-1 transition duration-300 cursor-pointer"
                 style={{
                   boxShadow: `0 10px 30px ${
-                    categoryColors[project.category[0]]
+                    categoryColors[project.category]
                   }66`,
                 }}
               >

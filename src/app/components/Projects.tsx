@@ -1,6 +1,6 @@
 "use client";
 
-import { projects, categoryColors } from "@/data/projects";
+import { projects, categoryColors, Category } from "@/data/projects";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -18,7 +18,7 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 gap-8">
 
           {featuredProjects.map((project) => {
-            const primaryCategory = project.category[0];
+            const primaryCategory: Category = project.category;
 
             return (
               <Link key={project.id} href={`/projects/${project.id}`}>
@@ -38,19 +38,17 @@ export default function Projects() {
 
                   {/* 🔥 MULTIPLE CATEGORY BADGES */}
                   <div className="flex flex-wrap gap-2 mb-3">
-                    {project.category.map((cat, i) => (
+                    
                       <span
-                        key={i}
                         className="text-xs px-3 py-1 rounded-full"
                         style={{
-                          backgroundColor: `${categoryColors[cat]}20`,
-                          color: categoryColors[cat],
-                          border: `1px solid ${categoryColors[cat]}40`,
+                          backgroundColor: `${categoryColors[project.category]}20`,
+                          color: categoryColors[project.category],
+                          border: `1px solid ${categoryColors[project.category]}40`,
                         }}
                       >
-                        {cat}
+                        {project.category}
                       </span>
-                    ))}
                   </div>
 
                   {/* Title */}
