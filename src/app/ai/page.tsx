@@ -53,7 +53,7 @@ export default function AIPage() {
     setInput("");
     setLoading(true);
 
-    const res = await fetch("http://localhost:8000/chat", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/chat`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -135,7 +135,7 @@ export default function AIPage() {
               </div>
 
               {/* ✅ INPUT INSIDE CONTAINER (FIXED POSITION) */}
-              <div className="shrink-0 p-4 border-t border-[#3E2F25] bg-white/5 backdrop-blur-lg">
+              <div className="shrink-0 p-4 bg-transparent">
                 <TypingBar
                   input={input}
                   setInput={setInput}
