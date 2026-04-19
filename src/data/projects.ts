@@ -5,7 +5,7 @@ export interface Project {
   title: string;
   description: string;
   longDescription: string;
-  category: Category; // 🔥 KEY FIX
+  category: Category[]; // 🔥 KEY FIX
   tags: string[];
   tech: string[];
   github: string;
@@ -27,7 +27,7 @@ The model analyzes patterns in time-series data to provide directional insights 
 Focus was placed on feature engineering, model accuracy, and handling noisy financial data.
     `,
 
-    category: "ML",
+    category: ["ML"],
     tags: ["Time Series", "Finance", "Prediction"],
 
     tech: ["Python", "Pandas", "Scikit-learn", "NumPy"],
@@ -51,7 +51,7 @@ The model identifies unusual transaction patterns and flags potential fraud with
 Special attention was given to class imbalance, feature scaling, and evaluation metrics like precision and recall.
     `,
 
-    category: "Cybersecurity",
+    category: ["ML"],
     tags: ["Fraud Detection", "Anomaly Detection"],
 
     tech: ["Python", "Scikit-learn", "Pandas"],
@@ -75,7 +75,7 @@ The project focuses on extracting meaningful patterns from raw logs and identify
 This approach helps in proactive incident detection and improves system reliability.
     `,
 
-    category: "AI",
+    category: ["ML"],
     tags: ["Logs", "Monitoring", "Anomaly Detection"],
 
     tech: ["Python", "Machine Learning", "Data Processing"],
@@ -99,7 +99,7 @@ The system is designed for real-time processing, logging, and alert generation.
 It integrates hardware and software components, making it a complete end-to-end intelligent security solution.
     `,
 
-    category: "IoT",
+    category: ["AI", "IoT"],
     tags: ["Computer Vision", "Security", "Embedded"],
 
     tech: ["Python", "OpenCV", "ESP32", "FastAPI"],
@@ -109,6 +109,33 @@ It integrates hardware and software components, making it a complete end-to-end 
 
     featured: true,
     glow: "#7A8B7A",
+  },
+
+  {
+    id: "data-inspector",
+    title: "Data Inspector",
+    description: "Interactive data analysis tool for inspecting, cleaning, and understanding datasets.",
+
+    longDescription: `
+A data analysis and inspection tool designed to streamline the process of exploring and understanding raw datasets. 
+It allows users to quickly load data, perform cleaning operations, and extract meaningful insights through structured analysis.
+
+The project focuses on handling real-world data challenges such as missing values, inconsistent formats, and exploratory data analysis (EDA). 
+It provides a foundation for building machine learning pipelines by ensuring data quality and interpretability before modeling.
+
+Special emphasis was placed on usability, modular code structure, and efficient data handling using Python-based data science libraries.
+    `,
+
+    category: ["ML"],
+    tags: ["EDA", "Data Cleaning", "Data Analysis"],
+
+    tech: ["Python", "Random Forest", "Pandas"],
+
+    github: "https://github.com/Yousician-01/Data-Inspector",
+    demo: "",
+
+    featured: false,
+    glow: "#8C6A5D",
   },
 ];
 

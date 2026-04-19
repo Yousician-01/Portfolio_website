@@ -25,8 +25,40 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, Arial, Times, sans-serif;
+}
+
+/*scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(164, 117, 81, 0.4); /* your accent */
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(164, 117, 81, 0.7);
+  box-shadow: 0 0 6px rgba(164, 117, 81, 0.6);
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(164, 117, 81, 0.6) transparent;
 }

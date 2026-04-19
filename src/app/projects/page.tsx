@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { projects } from "@/data/projects";
+import { Category, projects } from "@/data/projects";
 import { categoryColors } from "@/data/projects";
 
 const categories = ["All", "AI", "ML", "Cybersecurity", "IoT"];
@@ -13,7 +13,7 @@ export default function ProjectsPage() {
   const filteredProjects =
     activeCategory === "All"
       ? projects
-      : projects.filter((p) => p.category === activeCategory);
+      : projects.filter((p) => p.category.includes(activeCategory as Category));
 
   return (
     <main className="min-h-screen bg-[#F5F1E9] text-[#3E2F25] px-6 py-20">
@@ -55,7 +55,7 @@ export default function ProjectsPage() {
                 className="bg-[#FAF7F2] border border-[#E5D9CC] rounded-2xl p-6  hover:-translate-y-1 transition duration-300 cursor-pointer"
                 style={{
                   boxShadow: `0 10px 30px ${
-                    categoryColors[project.category]
+                    categoryColors[project.category[0]]
                   }66`,
                 }}
               >
