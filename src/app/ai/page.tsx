@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type Message = {
   role: "user" | "assistant";
@@ -121,7 +123,11 @@ export default function AIPage() {
                           : "bg-transparent border border-[#3E2F25]"
                         }`}
                     >
+                      <div className="prose prose-invert max-w-none text-sm">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
                       {m.content}
+                    </ReactMarkdown>
+                    </div>
                     </div>
                   </div>
                 ))}
