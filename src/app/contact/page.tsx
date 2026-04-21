@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -13,12 +14,28 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
+    
+    try{
+      await emailjs.send(
+        "service_zxieppb",
+        "template_0a90zgi",
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        "X7JpsaaBZ5cJ4KtQb"
+      );
 
-    const mailtoLink = `mailto:your@email.com?subject=Portfolio Contact from ${form.name}&body=${form.message}`;
+      alert("Message sent successfully!");
 
-    window.location.href = mailtoLink;
+      setForm({name: "", email: "", message: "",});
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message. Try again.")
+    }
   };
 
   return (
